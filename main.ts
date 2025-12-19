@@ -15,8 +15,9 @@ namespace longRadio {
         if (!message) return;
         
         // Ensure message doesn't exceed 251 characters
+        // MakeCode uses substr instead of substring
         if (message.length > 251) {
-            message = message.substring(0, 251);
+            message = message.substr(0, 251);
         }
         
         // Convert string to buffer and send using radio.sendBuffer()
