@@ -1,0 +1,19 @@
+# MakeCode extension build files
+*.built
+*.prj
+*.hex
+
+# Node modules (if using npm)
+node_modules/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
