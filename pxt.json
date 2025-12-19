@@ -8,6 +8,8 @@
     },
     "files": [
         "main.ts",
+        "shim.d.ts",
+        "shim.cpp",
         "README.md"
     ],
     "public": true,
