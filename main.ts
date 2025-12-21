@@ -28,6 +28,7 @@ namespace longRadio {
         
         // Configure the radio packet buffer size to 251 bytes
         // This uses a native shim to call the DAL radio.setPacketParam function
+        // Note: This may need adjustment based on CODAL vs DAL API differences
         setRadioBufferSize(PACKET_PARAM_BUFFER_SIZE, MAX_BUFFER_SIZE);
         
         initialized = true;
@@ -79,7 +80,7 @@ namespace longRadio {
         // Configure radio buffer size on first use
         configureRadioBuffer();
         
-        radio.onReceivedBuffer(function (receivedBuffer) {
+        radio.onReceivedBuffer(function (receivedBuffer: Buffer) {
             // Convert buffer back to string
             let receivedString = receivedBuffer.toString();
             handler(receivedString);

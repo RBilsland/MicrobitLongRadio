@@ -40,7 +40,7 @@ Use the `on long radio received` block to handle incoming long messages. This bl
 
 1. Open [MakeCode for micro:bit](https://makecode.microbit.org/)
 2. Click on "Extensions" in the block menu
-3. Paste the GitHub repository URL: `https://github.com/YOUR_USERNAME/MicrobitLongRadio`
+3. Paste the GitHub repository URL: `https://github.com/RBilsland/MicrobitLongRadio`
 4. The extension will be added to your project
 
 ### Local Development
@@ -49,6 +49,65 @@ Use the `on long radio received` block to handle incoming long messages. This bl
 2. Open [MakeCode for micro:bit](https://makecode.microbit.org/)
 3. Click on "Extensions" → "Create new extension"
 4. Import the files from this repository
+
+## Building Locally
+
+To build and test this extension locally, you'll need:
+
+1. **Node.js** installed (v14 or later recommended)
+2. **PXT CLI** installed globally:
+   ```bash
+   npm install -g pxt
+   ```
+
+### Quick Build
+
+Run the build script:
+```bash
+./build.sh
+```
+
+Or use npm scripts:
+```bash
+npm run build
+```
+
+### Testing Locally
+
+To test the extension in a local MakeCode editor:
+```bash
+npm run serve
+# or
+pxt serve
+```
+
+Then open `http://localhost:3232/` in your browser and create a new project to test the extension.
+
+### Available Scripts
+
+- `npm run build` - Build the extension and check for compilation errors
+- `npm run test` - Run tests (if any)
+- `npm run serve` - Start a local MakeCode editor for testing
+- `npm run lint` - Run the linter to check code quality
+- `npm run deploy` - Deploy the extension (if configured)
+
+### Manual Build Steps
+
+If you prefer to build manually:
+
+```bash
+# Set target to microbit
+pxt target microbit
+
+# Install dependencies
+pxt install
+
+# Build the extension
+pxt build
+
+# Serve locally for testing
+pxt serve
+```
 
 ## Technical Details
 

@@ -2,9 +2,14 @@
 *.built
 *.prj
 *.hex
+built/
+lib/
+.pxt/
 
 # Node modules (if using npm)
 node_modules/
+package-lock.json
+yarn.lock
 
 # IDE files
 .vscode/

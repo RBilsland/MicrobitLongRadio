@@ -8,7 +8,7 @@
     },
     "files": [
         "main.ts",
-        "shim.d.ts",
+        "shims.d.ts",
         "shim.cpp",
         "README.md"
     ],
@@ -18,4 +18,3 @@
         "targetId": "microbit"
     }
 }
-
