@@ -1,0 +1,23 @@
+{
+    "name": "longradio",
+    "version": "0.0.1",
+    "description": "Radio extension for micro:bit messages longer than 19 characters (up to 241).",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*",
+        "radio": "*"
+    },
+    "files": [
+        "README.md",
+        "main.ts",
+        "longradio.cpp",
+        "shims.d.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": true,
+    "supportedTargets": [
+        "microbit"
+    ]
+}
