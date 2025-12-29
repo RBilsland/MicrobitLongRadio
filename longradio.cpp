@@ -4,14 +4,12 @@ using namespace pxt;
 
 /**
  * Support for longer radio messages.
+ * Using shim names to avoid collision with TypeScript blocks.
  */
 namespace longradio {
 
-/**
- * Set the maximum packet length for the radio.
- */
 //%
-void setPacketLength(int length) {
+void setPacketLengthShim(int length) {
   uBit.radio.enable();
   if (length < 0)
     length = 0;
@@ -20,11 +18,8 @@ void setPacketLength(int length) {
   uBit.radio.setPacketSize(length);
 }
 
-/**
- * Send a string over the radio.
- */
 //%
-void sendString(String msg) {
+void sendStringShim(String msg) {
   if (!msg)
     return;
   uBit.radio.enable();
@@ -49,11 +44,8 @@ void sendString(String msg) {
   free(buf);
 }
 
-/**
- * Read a string from the radio queue.
- */
 //%
-String readString() {
+String readStringShim() {
   uBit.radio.enable();
   PacketBuffer p = uBit.radio.datagram.recv();
   if (p == PacketBuffer::EmptyPacket)
@@ -66,7 +58,6 @@ String readString() {
     return mkString("");
 
   int stringLen = data[9];
-  // Ensure we don't read past the end of the packet
   if (stringLen > len - 10)
     stringLen = len - 10;
   if (stringLen < 0)
@@ -75,11 +66,8 @@ String readString() {
   return mkString((char *)(data + 10), stringLen);
 }
 
-/**
- * Internal use only. Registers the handler for radio reception.
- */
 //%
-void onReceivedData(Action handler) {
+void onReceivedDataShim(Action handler) {
   uBit.radio.enable();
   registerWithDal(DEVICE_ID_RADIO, DEVICE_RADIO_EVT_DATAGRAM, handler);
 }
