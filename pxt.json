@@ -10,8 +10,7 @@
     "files": [
         "README.md",
         "main.ts",
-        "longradio.cpp",
-        "shims.d.ts"
+        "longradio.cpp"
     ],
     "testFiles": [
         "test.ts"

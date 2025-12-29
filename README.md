@@ -30,17 +30,22 @@ Runs code when a long string is received. Provides the full string as a paramete
 ### Sending a very long message
 ```blocks
 input.onButtonPressed(Button.A, function () {
-    longRadio.setPacketLength(251)
-    longRadio.sendString("This is a very long message that would normally be truncated to 19 characters in standard MakeCode radio blocks.")
+    longradio.setPacketLength(251)
+    longradio.sendString("This is a very long message that would normally be truncated to 19 characters in standard MakeCode radio blocks.")
 })
 ```
 
 ### Receiving a long message
 ```blocks
-longRadio.onReceivedString(function (receivedString) {
+longradio.onReceivedString(function (receivedString) {
     serial.writeLine(receivedString)
 })
 ```
+
+## Simulator Support
+The extension includes "no-op" implementations for the simulator. This means you can add the blocks to your project and the simulator will not crash. It will instead log the actions to the console (e.g., "Long Radio: Packet length set to 251"). 
+
+**Note: To see the long radio functionality in action, you must download the code to a physical micro:bit.**
 
 ## Compatibility
 This extension uses the same packet type as the standard `radio.sendString` block but allows for larger payloads. Other micro:bits using this extension will be able to receive the full message. Standard `radio.onReceivedString` blocks on other micro:bits might truncate the message or fail to receive it if they are not configured for the larger packet size.
